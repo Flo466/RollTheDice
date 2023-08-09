@@ -7,4 +7,24 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    color: gray;
+}
+
+.player-1 {
+    color: black;
+}
+
+.player-2 {
+}   
+
+.split-container {
+    display: flex;
+    height: 100vh;
+}
+.split {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
 }
