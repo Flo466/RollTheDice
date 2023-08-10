@@ -1,8 +1,8 @@
+/* Font */
 @font-face {
     font-family: Lato;
-    src: url(./Lato-Light.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url(./Lato-Thin.ttf) format('truetype');
+    font-weight: lighter;
 }
 
 body {
@@ -10,21 +10,10 @@ body {
     color: gray;
 }
 
-.player-1 {
-    color: black;
+.fixed-height-row {
+    height: 20vh;
 }
 
-.player-2 {
-}   
-
-.split-container {
-    display: flex;
-    height: 100vh;
-}
-.split {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: xx-large;
+.fixed-height-row-2 {
+    height: 40vh;
 }
