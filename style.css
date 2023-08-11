@@ -2,18 +2,46 @@
 @font-face {
     font-family: Lato;
     src: url(./Lato-Thin.ttf) format('truetype');
-    font-weight: lighter;
 }
-
+@font-face {
+    font-family: LatoLight;
+    src: url(./Lato-Light.ttf) format('truetype');
+}
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'LatoLight', sans-serif;
     color: gray;
 }
 
-.fixed-height-row {
-    height: 20vh;
+/* Variables */
+:root {
+    --redColor: rgb(234, 77, 76);
+    --lightGreyColor: rgb(188, 188, 188);
 }
 
+/* Screen height manager */
+.fixed-height-row {
+    height: 10vh;
+}
 .fixed-height-row-2 {
-    height: 40vh;
+    height: 45vh;
+}
+
+/* Players manager */
+.player {
+    font-size: 55px;
+}
+.player-2 {
+    color: var(--lightGreyColor);
+}
+/* Score manager */
+.score {
+    font-family: 'Lato';
+    font-size: 90px;
+    color: var(--redColor)
+}
+
+/* Button manager */
+.btn {
+    color:grey;
+    font-size: 30px;
 }
