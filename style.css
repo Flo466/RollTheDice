@@ -39,6 +39,19 @@ body {
     font-size: 90px;
     color: var(--redColor)
 }
+.current-score {
+    margin-left: 25%;
+    margin-top: 7%;
+    height: 130px;
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    background-color: var(--redColor);
+}
+.score-white {
+    color: white;
+    font-size: 40px;
+}
 
 /* Button manager */
 .btn {
@@ -47,5 +60,6 @@ body {
 }
 
 .icons {
+    font-family: 'Lato';
     color: var(--redColor);
 }
