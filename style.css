@@ -63,3 +63,8 @@ body {
     font-family: 'Lato';
     color: var(--redColor);
 }
+
+/* Dice manager */
+.dice {
+    margin-top: 30%;
+}
