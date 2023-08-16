@@ -13,28 +13,34 @@ image.onload = () => {
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 };
 
-// Reset scores clicking NEW GAME BUTTON
-function resetScores() {
-    const scores = document.querySelectorAll('.score');
-    scores.forEach(score => {
-        score.textContent = 'O';
-    });
-}
-
-// Roll dice and add value to player's score
 document.addEventListener('DOMContentLoaded', function() {
-    const rollButton = document.getElementById('rollButton');
-    const resultElement = document.getElementById('diceResult');
 
+    const rollButton = document.getElementById('rollButton');
+    const newGameButton = document.getElementById('newGameButton');
+    const resultElement = document.getElementById('diceResult');
+    
+    // Roll dice, generate random number, add it to player one's score
     rollButton.addEventListener('click', function() {
         const randomNumber = Math.floor(Math.random() * 6) + 1;
 
         scorePlayerOne += randomNumber;
         resultElement.textContent = randomNumber;
 
-        const activePlayerScoreElement = document.querySelector('.score-player-one');
-        activePlayerScoreElement.textContent = scorePlayerOne;
+        const scorePlayerOneElement = document.querySelector('.score');
+        scorePlayerOneElement.textContent = scorePlayerOne;
+    });
+
+    // Reset game
+    function resetScores() {
+        const scores = document.querySelectorAll('.score');
+        scores.forEach(score => {
+            score.textContent = '0';
+        });
+    }
+    newGameButton.addEventListener('click', function() {
+        resetScores();
     });
 });
+
 
 
