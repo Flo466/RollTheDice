@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const rollButton = document.getElementById('rollButton');
     const newGameButton = document.getElementById('newGameButton');
     const resultElement = document.getElementById('diceResult');
-    
+
     // Roll dice, generate random number, add it to player one's score
     rollButton.addEventListener('click', function() {
         const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     newGameButton.addEventListener('click', function() {
+        scorePlayerOne = 0;
         resetScores();
     });
 });
