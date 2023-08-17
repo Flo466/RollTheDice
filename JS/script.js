@@ -1,6 +1,8 @@
 const canvas = document.getElementById('dice');
 const ctx = canvas.getContext('2d');
+let activePlayer = 1;
 let scorePlayerOne = 0;
+let scorePlayerTwo = 0;
 
 
 // Creta new image
