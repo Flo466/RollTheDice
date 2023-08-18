@@ -25,36 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const diceResult = document.getElementById('diceResult');
     const holdButton = document.getElementById('hold-btn');
 
-    // Get elements to display player scores
-    const playerOneScoreElement = document.querySelector('.score-player-one');
-    const playerTwoScoreElement = document.querySelector('.score-player-two');
-    const playerOneCurrentScoreElement = document.querySelector('.crnt-score-player-One');
-    const playerTwoCurrentScoreElement = document.querySelector('.crnt-score-player-Two');
-
-    // Function to switch players
-    function switchPlayers(currentPlayer) {
-        return (currentPlayer === 1) ? 2 : 1;
-    }
-
-    // Function to reset scores
-    function resetScore(selector) {
-        document.querySelectorAll(selector).forEach(score => {
-            score.textContent = '0';
-        });
-    }
-
-    // Function to update displayed scores
-    function updateScores() {
-        playerOneScoreElement.textContent = playerOneScore;
-        playerTwoScoreElement.textContent = playerTwoScore;
-        playerOneCurrentScoreElement.textContent = playerOneCurrentScore;
-        playerTwoCurrentScoreElement.textContent = playerTwoCurrentScore;
-    }
-
-    // Function to simulate rolling a dice
-    function rollDice() {
-        return Math.floor(Math.random() * 6) + 1;
-    }
 
     // Event listener for roll button
     rollButton.addEventListener('click', function() {
@@ -71,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         diceResult.textContent = randomNumber;
-        updateScores();
+        updateScores(playerOneScore, playerTwoScore, playerOneCurrentScore, playerTwoCurrentScore);
     });
 
     // Event listener for hold button
@@ -89,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Switch players and update displayed scores
         activePlayer = switchPlayers(activePlayer);
-        updateScores();
+        updateScores(playerOneScore, playerTwoScore, playerOneCurrentScore, playerTwoCurrentScore);
     });
 
     // Event listener for new game button
