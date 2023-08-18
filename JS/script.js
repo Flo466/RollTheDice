@@ -24,7 +24,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return (currentPlayer === 1) ? 2 : 1;
     }
 
-    // Roll dice, generate random number, add it to player one's score
+    function resetScore(selector) {
+        const scores = document.querySelectorAll(selector);
+        scores.forEach(score => {
+            score.textContent = '0';
+        });
+    }
+
+    // Roll dice, generate random number, add it to active player's score
     rollButton.addEventListener('click', function() {
         const randomNumber = Math.floor(Math.random() * 6) + 1;
 
@@ -37,8 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             if (activePlayer === 1) {
                 playerOneScore = 0;
+                resetScore('.score-player-one')
             } else {
                 playerTwoScore = 0;
+                resetScore('.score-player-two')
             }
             activePlayer = switchPlayers(activePlayer);
         }
@@ -49,18 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
         activePlayerScoreElement.textContent = (activePlayer === 1) ? playerOneScore : playerTwoScore;
     });
 
-    function resetScores() {
-        const scores = document.querySelectorAll('.score');
-        scores.forEach(score => {
-            score.textContent = '0';
-            diceResult.textContent = '-'
-        });
-    }
-
     // Reset game
     newGameButton.addEventListener('click', function() {
         playerOneScore = 0;
         playerTwoScore = 0;
-        resetScores();
+        resetScore('.score');
     });
 });
