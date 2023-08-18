@@ -24,80 +24,74 @@ document.addEventListener('DOMContentLoaded', function() {
     const diceResult = document.getElementById('diceResult');
     const holdButton = document.getElementById('hold-btn');
 
+    const playerOneScoreElement = document.querySelector('.score-player-one');
+    const playerTwoScoreElement = document.querySelector('.score-player-two');
+    const playerOneCurrentScoreElement = document.querySelector('.crnt-score-player-One');
+    const playerTwoCurrentScoreElement = document.querySelector('.crnt-score-player-Two');
+
+    let playerOneScore = 0;
+    let playerTwoScore = 0;
+    let playerOneCurrentScore = 0;
+    let playerTwoCurrentScore = 0;
+    let activePlayer = 1;
+
     function switchPlayers(currentPlayer) {
         return (currentPlayer === 1) ? 2 : 1;
     }
 
     function resetScore(selector) {
-        const scores = document.querySelectorAll(selector);
-        scores.forEach(score => {
+        document.querySelectorAll(selector).forEach(score => {
             score.textContent = '0';
         });
     }
 
     function updateScores() {
-        const playerOneScoreElement = document.querySelector('.score-player-one');
-        const playerTwoScoreElement = document.querySelector('.score-player-two');
-
         playerOneScoreElement.textContent = playerOneScore;
         playerTwoScoreElement.textContent = playerTwoScore;
-
-        const playerOneCurrentScoreElement = document.querySelector('.crnt-score-player-One');
-        const playerTwoCurrentScoreElement = document.querySelector('.crnt-score-player-Two');
-
         playerOneCurrentScoreElement.textContent = playerOneCurrentScore;
         playerTwoCurrentScoreElement.textContent = playerTwoCurrentScore;
     }
 
+    function rollDice() {
+        return Math.floor(Math.random() * 6) + 1;
+    }
 
-    // Roll dice, generate random number, add it to active player's score
     rollButton.addEventListener('click', function() {
-        const randomNumber = Math.floor(Math.random() * 6) + 1;
+        const randomNumber = rollDice();
 
         if (randomNumber !== 1) {
-            if (activePlayer === 1) {
-                playerOneScore += randomNumber;
-            } else {
-                playerTwoScore += randomNumber;
-            }
+            (activePlayer === 1) ? playerOneScore += randomNumber : playerTwoScore += randomNumber;
         } else {
-            if (activePlayer === 1) {
-                playerOneScore = 0;
-                resetScore('.score-player-one')
-            } else {
-                playerTwoScore = 0;
-                resetScore('.score-player-two')
-            }
+            resetScore(activePlayer === 1 ? '.score-player-one' : '.score-player-two');
+            (activePlayer === 1) ? playerOneScore = 0 : playerTwoScore = 0;
             activePlayer = switchPlayers(activePlayer);
         }
-    
+
         diceResult.textContent = randomNumber;
-    
-        const activePlayerScoreElement = document.querySelector(activePlayer === 1 ? '.score-player-one' : '.score-player-two');
-        activePlayerScoreElement.textContent = (activePlayer === 1) ? playerOneScore : playerTwoScore;
+        updateScores();
     });
 
     holdButton.addEventListener('click', function() {
         if (activePlayer === 1) {
             playerOneCurrentScore += playerOneScore;
             playerOneScore = 0;
-            resetScore('.score-player-one')
+            resetScore('.score-player-one');
         } else {
             playerTwoCurrentScore += playerTwoScore;
             playerTwoScore = 0;
-            resetScore('.score-player-two')
+            resetScore('.score-player-two');
         }
 
         activePlayer = switchPlayers(activePlayer);
         updateScores();
     });
 
-    // Reset game
     newGameButton.addEventListener('click', function() {
         playerOneScore = 0;
         playerTwoScore = 0;
+        playerOneCurrentScore = 0;
+        playerTwoCurrentScore = 0;
         resetScore('.score');
+        updateScores();
     });
 });
-
-    
