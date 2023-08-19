@@ -27,3 +27,14 @@ function updateScores(playerOneScore, playerTwoScore, playerOneCurrentScore, pla
     playerOneCurrentScoreElement.textContent = playerOneCurrentScore;
     playerTwoCurrentScoreElement.textContent = playerTwoCurrentScore;
 }
+
+// Functions ending game when player reaches 100 points
+function endGame(playerOneCurrentScore, playerTwoCurrentScore) {
+    if (playerOneCurrentScore >= 100) {
+        alert('Player One Wins!');
+        resetScore('.score');
+    } else if (playerTwoCurrentScore >= 100) {
+        alert('Player Two Wins!');
+        resetScore('.score');
+    }
+}

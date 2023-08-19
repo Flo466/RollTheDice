@@ -1,12 +1,12 @@
-const canvas = document.getElementById('dice');
-const ctx = canvas.getContext('2d');
-
 // Initialize game state variables
 let activePlayer = 1;
 let playerOneScore = 0;
 let playerTwoScore = 0;
 let playerOneCurrentScore = 0;
 let playerTwoCurrentScore = 0;
+
+const canvas = document.getElementById('dice');
+const ctx = canvas.getContext('2d');
 
 // Create new image for dice
 const image = new Image();
@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Switch players and update displayed scores
         activePlayer = switchPlayers(activePlayer);
         updateScores(playerOneScore, playerTwoScore, playerOneCurrentScore, playerTwoCurrentScore);
+
+        // Call the end game function   
+        endGame(playerOneCurrentScore, playerTwoCurrentScore);
     });
 
     // Event listener for new game button
