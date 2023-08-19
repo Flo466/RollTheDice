@@ -67,4 +67,84 @@ body {
 /* Dice manager */
 .dice {
     margin-top: 30%;
+    height: 120px; 
+    width: 120px;
+}
+
+/* Smartphones landscape */
+@media (max-width: 844px) and (max-height: 390px) and (orientation: landscape) {
+    .dice {
+        margin-top: 10%;
+        height: 80px; 
+        width: 80px;
+    }
+
+    .player {
+        font-size: 30px;
+    }
+
+    .score {
+        font-size: 60px;
+    }
+
+    .current-score {
+        margin-left: 14%;
+        margin-top: 5%;
+        height: auto;
+        width: 70%;
+        font-size: 20px;
+    }
+
+    .score-white {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+
+    .icons {
+        font-size: 20px;
+    }
+}
+
+/* Bigger Smartphones and tablets landscape */
+@media (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .dice {
+        margin-top: 10%;
+        height: 90px;
+        width: 90px;
+    }
+
+    .player {
+        font-size: 30px;
+    }
+
+    .score {
+        font-size: 60px;
+    }
+
+    .current-score {
+        margin-left: 14%;
+        margin-top: 5%;
+        height: auto;
+        width: 70%;
+        font-size: 20px;
+    }
+
+    .score-white {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+
+    .icons {
+        font-size: 20px;
+    }
 }
