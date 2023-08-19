@@ -74,4 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         playerTwoCurrentScore = 0;
         resetScore('.score');
     });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> feature/front
