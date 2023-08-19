@@ -31,10 +31,10 @@ function updateScores(playerOneScore, playerTwoScore, playerOneCurrentScore, pla
 // Functions ending game when player reaches 100 points
 function endGame(playerOneCurrentScore, playerTwoCurrentScore) {
     if (playerOneCurrentScore >= 100) {
-        alert('Player One Wins!');
+        alert("Player One Wins! Let's reset the scores to zero for a new game.");
         resetScore('.score');
     } else if (playerTwoCurrentScore >= 100) {
-        alert('Player Two Wins!');
+        alert("Player Two Wins! Let's reset the scores to zero for a new game.");
         resetScore('.score');
     }
 }
