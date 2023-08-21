@@ -12,6 +12,13 @@ body {
     color: gray;
 }
 
+.left-half {
+    background-color: var(--lightGreyColor);
+    width: 50%;
+    height: 100vh; /* Prendre toute la hauteur de la vue */
+}
+
+
 /* Variables */
 :root {
     --redColor: rgb(234, 77, 76);
