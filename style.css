@@ -12,6 +12,13 @@ body {
     color: gray;
 }
 
+.background-image {
+    background-image: url('./Images/Design\ sans\ titre.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* Variables */
 :root {
     --redColor: rgb(234, 77, 76);
