@@ -10,9 +10,11 @@ function resetScore(selector) {
     });
 }
 
-// Function to simulate rolling a dice
+// Function to simulate rolling a dice and call the image of the corresponding dice
 function rollDice() {
-    return Math.floor(Math.random() * 6) + 1;
+    const diceNumber = Math.floor(Math.random() * 6) + 1;
+    displayDiceImage(diceNumber);
+    return diceNumber;
 }
 
 // Function to update displayed scores

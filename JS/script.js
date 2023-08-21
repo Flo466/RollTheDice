@@ -5,17 +5,35 @@ let playerTwoScore = 0;
 let playerOneCurrentScore = 0;
 let playerTwoCurrentScore = 0;
 
+// Dices path
+const diceImages = {
+    1: './Images/dado_1.svg',
+    2: './Images/dado_2.svg',
+    3: './Images/dado_3.svg',
+    4: './Images/dado_4.svg',
+    5: './Images/dado_5.svg',
+    6: './Images/dado_6.svg'
+};
+
+
 const canvas = document.getElementById('dice');
 const ctx = canvas.getContext('2d');
+const defaultDiceImage = new Image();
+defaultDiceImage.src = diceImages[1];
 
-// Create new image for dice
-const image = new Image();
-image.src = "./Images/default_dice.png";
+// Display image dice image
+function displayDiceImage(diceNumber) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const diceImage = new Image();
+    diceImage.src = diceImages[diceNumber];
+    
+    diceImage.onload = function() {
+        ctx.drawImage(diceImage, 0, 0, canvas.width, canvas.height);
+    };
+}
 
-// Load image and draw on canvas
-image.onload = () => {
-  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-};
+// Initial call displaying default image
+displayDiceImage(1);
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -40,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             activePlayer = switchPlayers(activePlayer);
         }
 
-        diceResult.textContent = randomNumber;
         updateScores(playerOneScore, playerTwoScore, playerOneCurrentScore, playerTwoCurrentScore);
     });
 
@@ -73,5 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         playerOneCurrentScore = 0;
         playerTwoCurrentScore = 0;
         resetScore('.score');
+        displayDiceImage(1);
     });
 });

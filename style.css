@@ -12,12 +12,13 @@ body {
     color: gray;
 }
 
-.left-half {
-    background-color: var(--lightGreyColor);
-    width: 50%;
-    height: 100vh; /* Prendre toute la hauteur de la vue */
+/* Background image */
+.background-image {
+    background-image: url('./Images/background_image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
 
 /* Variables */
 :root {
