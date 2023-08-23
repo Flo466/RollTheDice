@@ -7,6 +7,8 @@
     font-family: LatoLight;
     src: url(./Lato-Light.ttf) format('truetype');
 }
+
+/* Body */
 body {
     font-family: 'LatoLight', sans-serif;
     color: gray;

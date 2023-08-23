@@ -5,7 +5,7 @@ let playerTwoScore = 0;
 let playerOneCurrentScore = 0;
 let playerTwoCurrentScore = 0;
 
-// Dices path
+// Dices paths
 const diceImages = {
     1: './Images/dado_1.svg',
     2: './Images/dado_2.svg',
