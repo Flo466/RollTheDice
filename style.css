@@ -32,6 +32,7 @@ body {
 .fixed-height-row {
     height: 10vh;
 }
+
 .fixed-height-row-2 {
     height: 45vh;
 }
@@ -43,9 +44,10 @@ body {
 .player-2 {
     color: var(--lightGreyColor);
 }
+
 /* Score manager */
 .score {
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     font-size: 90px;
     color: var(--redColor)
 }
@@ -70,8 +72,13 @@ body {
 }
 
 .icons {
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     color: var(--redColor);
+    width: 30px;
+    height: 30px;
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block; 
 }
 
 /* Dice manager */
@@ -158,3 +165,42 @@ body {
         font-size: 20px;
     }
 }
+
+/* Smartphones portrait */
+@media (max-width: 650px) {
+    .dice {
+        margin-top: 10%;
+        height: 60px; 
+        width: 60px;
+    }
+
+    .player {
+        font-size: 20px;
+    }
+
+    .score {
+        font-size: 40px;
+    }
+
+    .current-score {
+        margin-left: 13%;
+        margin-top: 5%;
+        height: auto;
+        width: 70%;
+        font-size: 10px;
+    }
+
+    .score-white {
+        font-size: 10px;
+    }
+
+    .btn {
+        font-size: 10px;
+    }
+
+    .icons {
+        width: 15px;
+        height: 15px;
+    }
+  }
+  
