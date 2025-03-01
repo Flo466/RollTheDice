@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     const rollButton = document.getElementById('rollButton');
     const newGameButton = document.getElementById('newGameButton');
-    const diceResult = document.getElementById('diceResult');
     const holdButton = document.getElementById('hold-btn');
 
 
