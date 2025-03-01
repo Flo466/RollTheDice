@@ -46,21 +46,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for roll button
     rollButton.addEventListener('click', function() {
         const randomNumber = rollDice();
-
         if (randomNumber !== 1) {
-            // Update scores based on active player
-            (activePlayer === 1) ? playerOneScore += randomNumber : playerTwoScore += randomNumber;
-        } else {
-            // Reset scores and switch players when a 1 is rolled
-            resetScore(activePlayer === 1 ? '.score-player-one' : '.score-player-two');
             if (activePlayer === 1) {
+                playerOneScore += randomNumber;
+            } else {
+                playerTwoScore += randomNumber;
+            }
+        } else {
+            if (activePlayer === 1) {
+                resetScore('.score-player-one');
                 playerOneScore = 0;
             } else {
+                resetScore('.score-player-two');
                 playerTwoScore = 0;
             }
+            
             activePlayer = switchPlayers(activePlayer);
         }
-
         updateScores(playerOneScore, playerTwoScore, playerOneCurrentScore, playerTwoCurrentScore);
     });
 
