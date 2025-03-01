@@ -53,7 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Reset scores and switch players when a 1 is rolled
             resetScore(activePlayer === 1 ? '.score-player-one' : '.score-player-two');
-            (activePlayer === 1) ? playerOneScore = 0 : playerTwoScore = 0;
+            if (activePlayer === 1) {
+                playerOneScore = 0;
+            } else {
+                playerTwoScore = 0;
+            }
             activePlayer = switchPlayers(activePlayer);
         }
 
